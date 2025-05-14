@@ -1,3 +1,4 @@
+import itemModel from "../itemmodel.js";
 import userModel from "../usermodel.js";
 
 export const getUserData = async(req,res) =>
@@ -20,5 +21,17 @@ export const getUserData = async(req,res) =>
   {
     return res.json({success:false, message: 'Invalid otp'});
 
+  }
+}
+
+export const getItems = async(req,res) =>
+{
+  try{
+       const itemsdata = await itemModel.find();
+       return res.json({success:true, itemsdata});
+  }
+  catch(error)
+  {
+     return res.json({success:false, message: 'unable to get data ${error.message}'})
   }
 }
