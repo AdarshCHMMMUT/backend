@@ -1,4 +1,4 @@
-import bcrypt from "bcryptjs";
+
 import userModel from "../usermodel.js";
 import addressModel from "../addressmodel.js";
 import orderModel from "../ordermodel.js";
